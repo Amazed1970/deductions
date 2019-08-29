@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>UBER AND LYFT DEDUCTIONS IN JAVASCRIPT WITH USER INPUT</title>
+<meta charset="utf-8" />
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
+</head>
+<html>
+<body style="background-color: cornflowerblue; font-family: sans-serif; padding:20px;">
+
+<!-- Begin first part of formula -->
+<h2 class="alert alert-danger" role="alert" style="padding: 20px; background-color:white;">Uber and Lyft deductions calculator.</h2>
+<hr style="background-color:white;">
+
+<form style="padding: 20px;" method="post">
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">How much Uber or Lyft pays you per mile in your market?<h4>
+<span style="padding: 10px;"><input style="width: 300px;" class="form-control" placeholder="Uber's pay per mile in your market" type="text" name="permile" size=15></span>
+<hr style="background-color:white;">	
+<p>
+<fieldset class="alert alert-danger" role="alert" style="padding: 20px;">
+    <legend class="alert alert-primary" role="alert">Select your Uber or Lyft rate of deduction per your contract.</legend>
+	<input type="radio" name="percentage" id="eighteen" value=".18" /><label for="eighteen">0.18</label><br />
+    <input type="radio" name="percentage" id="twenty" value=".20" /><label for="twenty">0.20</label><br />
+    <input type="radio" name="percentage" id="twentyfive" value=".25"  /><label for="event">0.25</label><br />
+    <input type="radio" name="percentage" id="twentyeight" value=".28" /><label for="twentyeight">0.28</label>
+</fieldset>	
+</p>
+<hr style="background-color:white;">	
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">Your pay per mile after Uber or Lyft deduction is:</h4>
+<span ><input class="btn btn-danger" type="button"value="Calculate"onClick="perMile(this.form)"></span><br>
+<span style="padding: 20px;"><input style="width: 300px;" class="form-control" placeholder="Your pay after deduction" type="text" name="totaldeducted" size=15></span>
+
+	
+</form>
+	
+<script>
+
+function perMile (form){
+	form.totaldeducted.value = form.permile.value * form.percentage.value - form.permile.value
+}
+</script>	
+	
+
+<hr style="background-color:white;"><br>
+	<!-- End of first part of formula -->
+	
+	<!-- Begin second part of formula -->
+	
+<form style="padding: 20px;" method="post">
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">Your rate per mile after Uber or Lyft deduction?<h4>
+<span style="padding: 10px;"><input style="width: 300px;" class="form-control" placeholder="Your rate per mile?" type="text" name="yourdeduct" size=20></span>
+	
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">How many miles per day you drive with the app on?<h4>
+<span style="padding: 10px;"><input style="width: 300px;" class="form-control" placeholder="Your many miles you drive?" type="text" name="howmanymiles" size=20></span>
+	
+
+	
+<p></p>
+	
+	
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">Your total money earned per your rate x miles driven with the app on is:</h4>
+<span ><input class="btn btn-danger" type="button"value="Calculate"onClick="howManyMiles(this.form)"></span><br>
+<span style="padding: 20px;"><input style="width: 300px;" class="form-control" placeholder="Total Money Earned" type="text" name="totalearned" size=15></span>
+
+	
+</form>
+	
+<script>
+
+function howManyMiles (form){
+	form.totalearned.value = form.howmanymiles.value * form.yourdeduct.value
+}
+</script>
+	
+	
+<hr style="background-color:white;">
+	
+	<!-- Begin third part of formula -->
+	
+	
+<form style="padding: 20px;" method="post">
+	
+
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">Your total money earned per your rate with the app on is:</h4>
+
+<span style="padding: 20px;"><input style="width: 300px;" class="form-control" placeholder="Total Money Earned with app on" type="text" name="totalearned" size=15></span>	
+	
+	
+	
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">Type your total daily expenses <strong>(Car Wash, Gas, Meals and / or any other expense you have to operate Uber or Lyft)</strong>.<h4>
+<span style="padding: 10px;"><input style="width: 300px;" class="form-control" placeholder="Your expenses?" type="text" name="yourexpense" size=20></span>
+	
+	
+<p></p>
+	
+	
+<h4 class="alert alert-primary" role="alert" style="padding: 20px;">Your total money earned per your rate - your expenses is:</h4>
+<span ><input class="btn btn-danger" type="button"value="Calculate"onClick="minusExpense(this.form)"></span><br>
+<span style="padding: 20px;"><input style="width: 300px;" class="form-control" placeholder="Total Money Earned" type="text" name="expensed" size=15></span>
+
+	
+</form>
+	
+<script>
+
+function minusExpense(form){
+	form.expensed.value = form.yourexpense.value - form.totalearned.value
+}
+</script>
+	
+	
+<hr style="background-color:white;">
+	
+	<!-- end of third part of formula -->
+	
+	
+</body>
+</html>
+	
+
+
